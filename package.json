@@ -1,6 +1,6 @@
 {
   "name": "uvrun",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Tim Caswell <tim@creationix.com>",
   "main": "build/Release/obj.target/uvrun.node"
 }
