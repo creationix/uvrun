@@ -2,5 +2,9 @@
   "name": "uvrun",
   "version": "0.1.0",
   "author": "Tim Caswell <tim@creationix.com>",
-  "main": "build/Release/obj.target/uvrun.node"
+  "main": "build/Release/obj.target/uvrun.node",
+  { 
+    "type" : "git"
+    "url" : "http://github.com/creationix/uvrun"
+  }
 }
