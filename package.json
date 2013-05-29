@@ -4,7 +4,7 @@
   "author": "Tim Caswell <tim@creationix.com>",
   "main": "build/Release/obj.target/uvrun.node",
   { 
-    "type" : "git"
+    "type" : "git",
     "url" : "http://github.com/creationix/uvrun"
   }
 }
