@@ -21,12 +21,23 @@ NAN_METHOD(RunOnce) {
   info.GetReturnValue().Set(r);
 }
 
+NAN_METHOD(RunNoWait) {
+#ifdef OLD_UV_RUN_SIGNATURE
+  int r = uv_run_nowait(uv_default_loop());
+#else
+  int r = uv_run(uv_default_loop(), UV_RUN_NOWAIT);
+#endif
+  info.GetReturnValue().Set(r);
+}
+
 NAN_MODULE_INIT(init) {
     using Nan::New;
     Nan::Set(target, New<String>("run").ToLocalChecked(),
         Nan::GetFunction(New<FunctionTemplate>(Run)).ToLocalChecked());
     Nan::Set(target, New<String>("runOnce").ToLocalChecked(),
         Nan::GetFunction(New<FunctionTemplate>(RunOnce)).ToLocalChecked());
+    Nan::Set(target, New<String>("runNoWait").ToLocalChecked(),
+        Nan::GetFunction(New<FunctionTemplate>(RunNoWait)).ToLocalChecked());
 }
 
 NODE_MODULE(uvrun, init);
