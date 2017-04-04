@@ -3,6 +3,9 @@
     {
       "target_name": "uvrun",
       "sources": ["uvrun.cc"],
+      "include_dirs": [
+        "<!(node -e \"require('nan')\")"
+      ],
       "variables": {
         "node_version": '<!(node --version | sed -e "s/^v\([0-9]*\\.[0-9]*\).*$/\\1/")',
       },
